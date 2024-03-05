@@ -1,0 +1,4 @@
+Client commands:
+docker build enclave -t enclave
+nitro-cli build-enclave --docker-uri enclave:latest --output-file enclave.eif
+nitro-cli run-enclave --cpu-count 8 --memory 70000 --enclave-cid 16 --eif-path enclave.eif --attach-console
