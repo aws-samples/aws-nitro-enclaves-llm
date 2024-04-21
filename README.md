@@ -157,20 +157,7 @@ Note: You need to allocate at least 4 times the EIF file size. This can be modif
                 "AWS": "arn:aws:iam::<accountID>:user/<iamuser>"
             },
             "Action": "kms:*",
-            "Resource": [
-                "kms:CreateAlias", 
-                "kms:CreateKey", 
-                "kms:DeleteAlias", 
-                "kms:Describe*", 
-                "kms:GenerateRandom", 
-                "kms:Get*", 
-                "kms:List*", 
-                "kms:TagResource", 
-                "kms:UntagResource", 
-                "iam:ListGroups", 
-                "iam:ListRoles", 
-                "iam:ListUsers"
-            ]
+            "Resource": "*"
         },
         {
             "Sid": "Enable Enclave permissions",
@@ -183,8 +170,8 @@ Note: You need to allocate at least 4 times the EIF file size. This can be modif
                 "kms:Decrypt"
             ],
             "Resource": "*",
-                "Condition": {
-                    "StringEqualsIgnoreCase": {
+            "Condition": {
+                "StringEqualsIgnoreCase": {
                         "kms:RecipientAttestation:PCR0": "<PCR0>",
                         "kms:RecipientAttestation:PCR1": "<PCR1>",
                         "kms:RecipientAttestation:PCR2": "<PCR2>",
