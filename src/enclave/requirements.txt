@@ -1,4 +1,4 @@
-torch==2.0.1
+torch==2.2.0
 requests==2.25.1
 boto3==1.17.81
 transformers==4.38.0
